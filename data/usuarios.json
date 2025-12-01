@@ -1,0 +1,14 @@
+[
+    {
+        "name": "LUIS FRANCISCO VASQUEZ ANTONIO",
+        "username": "francsico",
+        "password": "scrypt:32768:8:1$A8uv9xvY9AuRo47e$d2e3f2d4754a5f4ff776142931f983db0a99fa4e2f4f9b1dcb49f5758971a03d6b1558018f53ebb1fc459a0b6728a92f3bcf2fd2f955a3b5d1943c9732c8fcf3",
+        "phone": "9611692015"
+    },
+    {
+        "name": "LUIS FRANCISCO VASQUEZ ANTONIO",
+        "username": "luisito",
+        "password": "scrypt:32768:8:1$eC1LTRXWYpEPGneo$938cf0c8749fdd8a2e72b50750bce9f1961f0b23060bd0ef3d2326c34987e7ed7deb974fe6030e40ee7815c3b1a796e7cbfc48816426c4a372f25fa73f73c5ab",
+        "phone": "9611692015"
+    }
+]

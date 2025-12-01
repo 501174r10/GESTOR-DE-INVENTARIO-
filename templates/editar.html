@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+<div class="container mt-4" style="max-width: 700px;">
+
+    <h2 class="text-center mb-4">Editar producto</h2>
+
+    <form method="POST" enctype="multipart/form-data" class="card p-4 shadow">
+
+        <div class="mb-3">
+            <label class="form-label">Nombre:</label>
+            <input type="text" name="nombre" class="form-control" value="{{ producto.nombre }}" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Categoría:</label>
+            <input type="text" name="categoria" class="form-control" value="{{ producto.categoria }}" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Cantidad:</label>
+            <input type="number" name="cantidad" class="form-control" value="{{ producto.cantidad }}" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Unidad:</label>
+            <select name="unidad" class="form-control">
+                <option value="piezas"   {% if producto.unidad == "piezas" %}selected{% endif %}>Piezas</option>
+                <option value="paquetes" {% if producto.unidad == "paquetes" %}selected{% endif %}>Paquetes</option>
+                <option value="pares"    {% if producto.unidad == "pares" %}selected{% endif %}>Pares</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Estado:</label>
+            <select name="estado" class="form-control">
+                <option value="Nuevo"     {% if producto.estado == "Nuevo" %}selected{% endif %}>Nuevo</option>
+                <option value="Usado"     {% if producto.estado == "Usado" %}selected{% endif %}>Usado</option>
+                <option value="Dañado"    {% if producto.estado == "Dañado" %}selected{% endif %}>Dañado</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100 mt-3">Guardar cambios</button>
+
+    </form>
+
+</div>
+
+{% endblock %}

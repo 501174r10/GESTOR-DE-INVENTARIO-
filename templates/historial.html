@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+<div class="container mt-4">
+
+    <h2 class="text-center mb-4">Historial de Movimientos</h2>
+
+    <div class="d-flex justify-content-center">
+        <input class="form-control search-box" id="buscar"
+               onkeyup="filtrar()" placeholder="🔎 Buscar en historial..."
+               style="max-width: 400px;">
+    </div>
+
+    <table class="table table-bordered table-striped mt-4">
+        <thead class="table-dark">
+        <tr>
+            <th>Fecha</th>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Cantidad</th>
+            <th>Unidad</th>
+            <th>Tipo</th>
+            <th>Motivo</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {% for h in registros %}
+        <tr>
+            <td>{{ h.fecha }}</td>
+            <td>{{ h.id }}</td>
+            <td>{{ h.nombre }}</td>
+            <td>{{ h.cantidad }}</td>
+            <td>{{ h.unidad }}</td>
+            <td>{{ h.tipo }}</td>
+            <td>{{ h.motivo }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+
+<script>
+function filtrar() {
+    let filtro = document.getElementById("buscar").value.toLowerCase();
+    let filas = document.querySelectorAll("tbody tr");
+
+    filas.forEach(f => {
+        let texto = f.innerText.toLowerCase();
+        f.style.display = texto.includes(filtro) ? "" : "none";
+    });
+}
+</script>
+
+{% endblock %}

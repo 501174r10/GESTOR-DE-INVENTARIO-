@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="card p-4">
+      <h4>Verificar código</h4>
+      <p>Se envió un código al número registrado (simulado). Ingresa el código recibido.</p>
+      {% if error %}<div class="alert alert-danger">{{ error }}</div>{% endif %}
+      <form method="post">
+        <input class="form-control mb-2" name="code" placeholder="Código (6 dígitos)" required>
+        <button class="btn btn-primary">Confirmar</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

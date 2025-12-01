@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container container-main">
+
+    <div class="title-box">
+        <h1 style="font-weight:bold;">Inventario General</h1>
+
+        <a href="/agregar" class="btn btn-success btn-add mt-3">➕ Agregar producto</a>
+        <a href="/historial" class="btn btn-secondary btn-add mt-3">📜 Ver historial</a>
+    </div>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th>Foto</th>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Categoría</th>
+            <th>Cantidad</th>
+            <th>Estado</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {% for p in productos %}
+        <tr>
+            <td>
+                {% if p.foto %}
+                    <img src="/static/uploads/{{ p.foto }}" class="foto-img">
+                {% else %}
+                    <img src="https://via.placeholder.com/90" class="foto-img">
+                {% endif %}
+            </td>
+
+            <td>{{ p.id }}</td>
+            <td>{{ p.nombre }}</td>
+            <td>{{ p.categoria }}</td>
+            <td>{{ p.cantidad }} {{ p.unidad }}</td>
+            <td>{{ p.estado }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+{% endblock %}
+

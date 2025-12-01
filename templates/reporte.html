@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-5">
+    <div class="card p-4">
+      <h4>Generar reporte PDF</h4>
+      <p>Selecciona la fecha final (el reporte cubrirá 32 días anteriores a la fecha seleccionada).</p>
+      <form method="post">
+        <input type="date" name="end_date" class="form-control mb-3" value="{{ today }}" required>
+        <button class="btn btn-primary w-100">Generar y descargar PDF</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
